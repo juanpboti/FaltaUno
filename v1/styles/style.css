@@ -15,7 +15,9 @@ body {
 	font: 'Roboto', sans-serif;
 	color: white;
 }
-
+.logo {
+	width: 200px;
+}
 .navbar-toggler-icon {
 	color: white;
 }
@@ -137,6 +139,11 @@ footer {
 	.jumbotron p {
 		color: #3d4750 !important;
 	}*/
+
+	.login {
+		text-align: center;
+	}
+	
 @media (max-width: 992px) { 
 
 	.features {
