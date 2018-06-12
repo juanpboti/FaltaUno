@@ -1,11 +1,17 @@
-<?php 
+<?php
 require_once("functions/functions.php");
+
 if ($_POST) {
+
   $erroresLogin = validarLogin($_POST);
   if (empty($erroresLogin)) {
     loginUsuario($_POST);
   }
 }
+
+
+
+
 
 ?>
 
@@ -41,16 +47,16 @@ if ($_POST) {
 
 	<div class="col-xs-12 col-md-12">
                     <div class="container">
-                      <form class="formulario login d-flex justify-content-center">
+                      <form action="" method="POST" class="formulario login d-flex justify-content-center">
                         <div class="form-group">
-                          <br><br><br>     
+                          <br><br><br>
 
                           <!--Borrar Breaks si hace falta para css-->
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre de Usuario">
+                          <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de Usuario">
                           <br>
-                          <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña">
+                          <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
                           <br>
-                            <button class="btn btn-default lg" href="#">Login</button>
+                            <button type="submit" class="btn btn-default lg">Login</button>
                         </div>
                       </form>
                     </div>

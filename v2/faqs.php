@@ -17,11 +17,11 @@
 	  </button>
 	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav ml-auto">
-	      <a class="nav-item nav-link" href="index.html">Home</a>
+	      <a class="nav-item nav-link" href="index.php">Home</a>
 	      <a class="nav-item nav-link active" href="#">F.A.Q.</a>
-	      <a class="nav-item nav-link" href="nosotros.html">Nosotros</a>
-	      <a class="nav-item nav-link" href="register.html">Registro</a>
-	      <a class="nav-item nav-link" href="login.html">Login</a>
+	      <a class="nav-item nav-link" href="nosotros.php">Nosotros</a>
+	      <a class="nav-item nav-link" href="register.php">Registro</a>
+	      <a class="nav-item nav-link" href="login.php">Login</a>
 	    </div>
 	  </div>
 	</nav>

@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +14,7 @@
 
 </head>
 <body>
+	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <a class="navbar-brand" href="#"><img class="logo" src="Img/logoFaltaUno.png"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +23,10 @@
 	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav ml-auto">
 	      <a class="nav-item nav-link active" href="#">Home</a>
-	      <a class="nav-item nav-link" href="faqs.html">F.A.Q</a>
-	      <a class="nav-item nav-link" href="nosotros.html">Nosotros</a>
-	      <a class="nav-item nav-link" href="register.html">Registro</a>
-	      <a class="nav-item nav-link" href="login.html">Login</a>
+	      <a class="nav-item nav-link" href="faqs.php">F.A.Q</a>
+	      <a class="nav-item nav-link" href="nosotros.php">Nosotros</a>
+	      <a class="nav-item nav-link" href="register.php">Registro</a>
+	      <a class="nav-item nav-link" href="login.php">Login</a>
 	    </div>
 	  </div>
 	</nav>
@@ -30,7 +35,7 @@
 			<div class="col-lg-4 col-md-12 information">
 					<h1>Bienvenido a <strong>FaltaUno</strong>!</h1>
 					<p>
-					Te damos la bienvenida a F1! Somos conscientes de lo importante que es el partido semanal con tus amigos y el problema que nos trae a todos cuando uno se baja a ultimo momento. Por eso te brindamos la forma de encontrar el jugador indicado en el momento indicado! 
+					Te damos la bienvenida a F1! Somos conscientes de lo importante que es el partido semanal con tus amigos y el problema que nos trae a todos cuando uno se baja a ultimo momento. Por eso te brindamos la forma de encontrar el jugador indicado en el momento indicado!
 					</p>
 					<p>
 					Además, como jugador, podras recibir valoraciones segun tu desempeño en la cancha y así, entrar en la privilegiada lista de Jugadores Premium donde podras recibir dinero para asistir a los partidos. A jugar!!
@@ -43,10 +48,10 @@
 			<div class="col-lg-7 col-md-12 features">
 				<header class="head">
 					<div class="head-lines">
-						<div class="titles">	
+						<div class="titles">
 							<h4 class="col-xs-12 text-uppercase text-center title-margin"><strong>Registrándote accederás a:</strong></h4>
 						</div>
-					</div>	
+					</div>
 				</header>
 
 				<div class="container">
@@ -100,7 +105,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 	<footer>
@@ -117,5 +122,3 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
-
-	

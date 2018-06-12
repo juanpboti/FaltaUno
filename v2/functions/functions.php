@@ -1,13 +1,17 @@
-<?php 
-
+<?php
+session_start();
+if (isset($_SESSION['usuariologueado'])) {
+  header('Location: inicio.php');
+}
+echo $_POST["usuariologueado"];
 function validarDatos($datos){
   $errores=[];
   $uppercase = preg_match('@[a-zA-Z0-9]@', $datos["password"]);
-  
+
   // var_dump($uppercase);exit;
   // $lowercase = preg_match('@[a-z]@', $datos["password"]);
   // $number    = preg_match('@[0-9]@', $datos["password"]);
-  if($datos["name"]==""){ 
+  if($datos["name"]==""){
     $errores["nombre"]="Por Favor ingresar tu nombre.";
   }
   if ($datos["email"]=="") {
@@ -20,8 +24,8 @@ function validarDatos($datos){
   }
   if ($datos["password"]=="") {
     $errores["password"]= "Por Favor Ingrese una contraseña";
-  } 
-  
+  }
+
   // if ($datos["cpassword"]=="") {
   //   $errores["cpassword"]= "Por favor ingrese la confirmacion de contraseña";
   // }elseif ($datos["password"]!=$datos["cpassword"]) {
@@ -40,14 +44,14 @@ function validarLogin($datos){
     $errores["password"]= "Por Favor ingresar su contraseña.";
   }
   return $errores;
-  
+
 }
 function yaExiste($datos){
   $erroresExiste=[];
   $usuarios = file_get_contents("usuario.json");
   $usuarios = json_decode($usuarios,true);
   $usuarios = $usuarios["usuarios"];
-  for ($i=0; $i < count($usuarios); $i++) { 
+  for ($i=0; $i < count($usuarios); $i++) {
     $user= json_decode($usuarios[$i],true);
     if ($datos["username"]==$user["usuario"]) {
       $erroresExiste["username"]="Ya existe ese usuario por favor elija otro";
@@ -85,21 +89,22 @@ function loginUsuario($datos){
   $usuarios = file_get_contents("usuario.json");
   $usuarios = json_decode($usuarios,true);
   $usuarios = $usuarios["usuarios"];
-  for ($i=0; $i < count($usuarios); $i++) { 
+  for ($i=0; $i < count($usuarios); $i++) {
     $user= json_decode($usuarios[$i],true);
     if ($datos["username"]==$user["usuario"]) {
-      
+
       if (password_verify($datos["password"],$user["password"])) {
-       echo "aleluya";
+       //echo "aleluya";
+       $_SESSION["usuariologueado"]=$user["usuario"];
+       return;
       }
-      
+
     }
   }
-  
-  
-  
-  
-  
-  
-}
 
+
+
+
+
+
+}
