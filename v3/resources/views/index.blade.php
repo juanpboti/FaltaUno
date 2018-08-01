@@ -57,6 +57,7 @@
 	</nav>
 	<div class="container-fluid main">
 		<div class="row d-flex justify-content-around">
+			@guest
 			<div class="col-lg-4 col-md-12 information">
 					<h1>Bienvenido a <strong>FaltaUno</strong>!</h1>
 					<p>
@@ -133,6 +134,92 @@
 
 		</div>
 	</div>
+	@else
+
+
+<div class="container-fluid main">
+		<div class="row d-flex justify-content-around">
+			<div class="col-md-6">
+				<form action="/crear" method='POST'>
+					@csrf
+				  <div class="form-group">
+				    <label for="email">Cantidad de jugadores:</label>
+				    <select class="form-control" id="cant" name="cant">
+					   	<option selected disabled>Seleccionar cantidad</option>
+					    <option>5</option>
+					    <option>6</option>
+					    <option>7</option>
+					    <option>8</option>
+					    <option>9</option>
+					    <option>11</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+				    <label for="superficie">Tipo de cancha:</label>
+				    <select class="form-control" id="superficie" name="superficie">
+					   	<option selected disabled>Seleccionar tipo de cancha</option>
+					    <option>Sintetico</option>
+					    <option>Pasto natural</option>
+					    <option>Parquet</option>
+					    <option>Cemento</option>
+					   
+					</select>
+				</div>
+
+
+  				  <div class="form-group">
+				    <label for="direc">Dirección</label>
+				    <input type="text" class="form-control" id="direc" name="direc">
+				  </div>
+				  <div class="form-group">
+				    <label for="barrio">Barrio</label>
+				    <input type="text" class="form-control" id="barrio" name="barrio">
+				  </div>
+				   <div class="form-group">
+				    <label for="zona">Zona</label>
+				    <input type="text" class="form-control" id="zona"  name="zona">
+				  </div>
+				  <div class="form-group">
+				    <label for="fecha">Fecha</label>
+				    <input id='fecha' type="date" name="fecha" max="3000-12-31" min="1000-01-01" class="form-control">
+				  </div>
+				  <div class="form-group">
+					 <label for="hora">Hora</label>
+					  
+					    <input name='hora' class="form-control" type="time" value="00:00:00" id="hora">
+					  
+				  </div>
+
+				  <div class="form-group">
+					 <label for="faltantes">Jugadores Faltantes</label>
+					  
+					    <select class="form-control" id="faltantes" name='faltantes'>
+					   	<option selected disabled>Seleccionar cantidad</option>
+					    <option value="1">1</option>
+					    <option value="2">2</option>
+					    <option value="3">3</option>
+					    <option value="4">4</option>
+					    <option value="5">5</option>
+					    <option value="6">6</option>
+					    <option value="7">7</option>
+					    <option value="8">8</option>
+					    <option value="9">9</option>
+					    <option value="10">10</option>
+					</select>
+					  
+				  </div>
+
+
+
+				
+				  <button type="submit" class="btn btn-primary">Enviar</button>
+				</form>
+			</div>
+		</div>
+				</div>
+
+	@endguest
 	<footer>
 		<div class="container">
 			<div class="main footer col-md-12 col-sm-12">

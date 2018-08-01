@@ -8,9 +8,9 @@ class Lugares extends Model
 {
    
 protected $fillable = [
-    'direccion','barrio'
+    'direccion','barrio', 'Zona'
  ];
 public function partido(){
-	return $this->belongsTo(Partidos::class);
+	return $this->belongsTo(Partido::class, 'partido_id');
 }
 }

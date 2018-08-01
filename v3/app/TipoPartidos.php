@@ -10,5 +10,6 @@ protected $fillable = [
     'cant_jugadores','superficie'
  ];
 public function partido(){
-	return $this->belongsTo(Partidos::class);
+	return $this->belongsTo(Partido::class, 'partido_id');
+}
 }
