@@ -24,4 +24,8 @@ Route::get('/faqs', 'HomeController@faqs');
 // Route::get('/login', 'HomeController@login');
 Route::get('/nosotros', 'HomeController@nosotros');
 //Route::get('register', 'HomeController@register');
-Route::post('/crear', 'PartidosController@crear');
+Route::post('/exito', 'PartidosController@crear');
+
+Route::get('partidos', 'PartidosController@partidos');
+
+Route::get('partidos/eliminar/{id}', 'PartidosController@eliminar');

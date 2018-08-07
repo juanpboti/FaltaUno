@@ -41,9 +41,22 @@ class PartidosController extends Controller
 
 		$partido->save();
 
-		return view('partidos',['partido'=>$partido]);
+		return view('exito', ['partido'=>$partido]);
 
+	}
 
+	public function partidos() {
+
+		$partidos = Partidos::orderBy('created_at')->paginate(10);
+
+		return view('partidos', ['partidos'=>$partidos]);
+
+	}
+
+	public function eliminar($id) {
+		$partido = Partidos::find($id);
+		$partido->delete();
+		return view('eliminado');
 	}
 
 }

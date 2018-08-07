@@ -17,12 +17,40 @@
 	  </button>
 	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav ml-auto">
-	      <a class="nav-item nav-link" href="/">Home</a>
-	      <a class="nav-item nav-link active" href="#">F.A.Q.</a>
+	      <a class="nav-item nav-link" href='/'>Home</a>
+	      <a class="nav-item nav-link active" href="/faqs">F.A.Q</a>
 	      <a class="nav-item nav-link" href="/nosotros">Nosotros</a>
-	      <a class="nav-item nav-link" href="/register">Registro</a>
-	      <a class="nav-item nav-link" href="/login">Login</a>
 	    </div>
+	    @guest
+	        
+	            <a class="nav-link nav-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+	       
+	        <li class="nav-item nav-link">
+	            <a class="nav-link nav-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+	        </li>
+	    @else
+	    	
+	    		<a href='/partidos' class="nav-link nav-item active">Ver Partidos</a>
+	    	
+	        <li class="nav-item nav-link dropdown">
+	            <a id="navbarDropdown" class="nav-link nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+	                {{ Auth::user()->name }} <span class="caret"></span>
+	                {{-- dd(Auth::user()) --}}
+	            </a>
+
+	            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+	                <a class="dropdown-item" href="{{ route('logout') }}"
+	                   onclick="event.preventDefault();
+	                                 document.getElementById('logout-form').submit();">
+	                    {{ __('Logout') }}
+	                </a>
+
+	                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+	                    @csrf
+	                </form>
+	            </div>
+	        </li>
+	    @endguest
 	  </div>
 	</nav>
 

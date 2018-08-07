@@ -11,6 +11,6 @@ protected $fillable = [
     'direccion','barrio', 'Zona'
  ];
 public function partido(){
-	return $this->belongsTo(Partido::class, 'partido_id');
+	return $this->belongsTo(Partidos::class, 'partido_id');
 }
 }
